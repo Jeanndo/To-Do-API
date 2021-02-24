@@ -18,10 +18,15 @@ const todoSchema = new mongoose.Schema({
         required:[true,'Please a indicate how priority is your todo item']
     },
     CreatedDate:{
-        type:Date,
-      CreatedAt: Date.now()
+        type:Date
+            
+    },
+    ModifiedDate:{
+        type:Date
+      
              
-    } 
+    },
+
 })
 
 const Todo = mongoose.model('Todo',todoSchema)
