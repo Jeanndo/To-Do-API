@@ -1,3 +1,8 @@
+/**
+ * CATCH ERRORS FROM ASYNCHRONOUS FUNCTION
+ * _______________________________________
+ * @property {function} fn -Catch Erros from Asynchronous functions
+ */
 
 const catchAsync = fn=>{
 
