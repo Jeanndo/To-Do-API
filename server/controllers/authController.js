@@ -4,15 +4,22 @@ import catchAsync from '../utils/catchAsync';
 import AppError from '../utils/appError'
 import jwt from 'jsonwebtoken'
 
+/**
+ * Sign Josn web Token
+ * @param {string} id - this user id is used as a payLoad for generating a jwt
+ * 
+ */
 const signToken = id=>{
     return jwt.sign({id},process.env.JWT_SECRET,{
         expiresIn:process.env.JWT_EXPIRES_IN
     })
 }
 
+
 export const signUp = catchAsync(async (req,res,next)=>{
 
     //const user = await User.create(req.body);
+
     const user = await User.create({
         firstName: req.body.firstName,
         lastName: req.body.lastName,
@@ -25,6 +32,7 @@ export const signUp = catchAsync(async (req,res,next)=>{
         address:req.body.address
     });
 
+   
     const token = signToken(user._id);
    
     res.status(201).json({
@@ -71,7 +79,7 @@ export const login = catchAsync(async(req,res,next)=>{
 export const protect = catchAsync( async (req,res,next)=>{
 
     let token;
-
+     
    if(req.headers.authorization && req.headers.authorization.startsWith('Bearer')){
    
     token = req.headers.authorization.split(' ')[1];
@@ -79,11 +87,13 @@ export const protect = catchAsync( async (req,res,next)=>{
 
    console.log(token)
 
+  
    if(!token){
        return  next(new AppError('You are not loged in , Please login to have an accsess',401))
 
   }
 
+  
   const decoded = await promisify(jwt.verify)(token,process.env.JWT_SECRET)
   console.log(decoded)
 
