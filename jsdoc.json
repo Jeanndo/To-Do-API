@@ -1,0 +1,21 @@
+{
+    "source":{
+        "include": ["server"],
+        "includePattern":".js$",
+        "excludePattern":"(node_modules/|To-Do-App-Documentation)"
+
+    },
+    "plugins":["plugins/markdown"],
+    "templates":{
+        "cleverLinks":true,
+        "monospaceLinks":true     
+    },
+    "opts":{
+        "recurse":true,
+        "destination":"./To-Do-App-Documentation",
+        "template":"./custom-template",
+        "readme":"readme.md"
+        
+       
+    }
+}
