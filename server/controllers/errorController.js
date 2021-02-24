@@ -1,42 +1,98 @@
 import AppError from "../utils/appError"; 
+
+/**
+ * JSON WEB TOKEN EXPIRATIION ERROR HANDLER
+ * ________________________________________
+ * @property {function} - Handles Token expiration errors by calling Global error Handler
+ * see {@link  AppError }
+ */
 const handleTokenExpErr = () =>
   new AppError(401, "Your token is expired please login again!");
+
+  /**
+ * MONGO SERVER ERROR HANDLER
+ *   ________________________________________
+ * @property {function} - Handles Mongo Server errors by calling Global error Handler
+ * see {@link  AppError }
+ */
 const handleMongoServerErr = () =>
   new AppError(
     408,
     "Your connection was interrupted! Please make sure you have good internet"
   );
+
+  /**
+ * INVALID JSON WEB TOKEN ERROR HANDLER
+ *  ________________________________________
+ * @property {function} - Handles Json web tokem errors by calling Global error Handler
+ * see {@link  AppError }
+ */
 const handleJsonWebTokenError = () =>
   new AppError(401, "Invalid token please login again!.");
 
+   /**
+  *TWILIO ERROR HANDLER
+ * ________________________________________
+ * @property {function} - Handles handle Twilio Request errors by calling Global error Handler
+ * see {@link  AppError }
+ */
 const handleTwilioRequestErr = () =>
   new AppError(
     401,
     "Too many requests sent to Twilio , Please try again after One day!."
   );
 
+  /**
+   * VERIFICATION CODE ERROR HANDLER
+   * ________________________________________
+ * @property {function} - Handles Verification Code errors by calling Global error Handler
+ * see {@link  AppError }
+ */
 const handleVerificationCodeErr = () =>
   new AppError(
     401,
     "Expired Verification Code, Please request new Verification Code!."
   );
+
+ /**
+  * DUPLICATION ERROR HANDLER
+  * ________________________________________
+ * @property {function} - Handles Duplicate errors by calling Global error Handler
+ * see {@link  AppError }
+ */
 const handleDuplicateFieldsErrorDB = () => {
   return new AppError(
     400,
     "Duplicate detected, Please try to use other values"
   );
 };
+   /**
+    * CAST ERROR HANDLER
+    * ________________________________________
+ * @property {function} - Handles Cast errors by calling Global error Handler
+ * see {@link  AppError }
+ */
 const handleCastErrorDB = (error) => {
   const message = `Invalid ${error.path}: ${error.value}`;
   return new AppError(400, message);
 };
-
+/**
+ * VALIDATION ERROR HANDLER
+ * ________________________________________
+ * @property {function} - Handles Validation errors by calling Global error Handler
+ * see {@link  AppError }
+ */
 const handleValidationErrorDB = (error) => {
   const errors = Object.values(error.errors).map((el) => el.message);
   const message = `Invalid input. ${errors.join(".")}`;
   return new AppError(400, message);
 };
 
+  /**
+   * SEND ERRORS DURING DEVELOPMENT
+   * _______________________________________
+ * @param {string} err - Error we Send to Developer during Development
+ */
 
 const sendErrorDev = (err,res)=>{
 
@@ -49,7 +105,11 @@ const sendErrorDev = (err,res)=>{
     })
       
 }
-
+ /**
+  * SEND ERRORS DURING PRODUCTION
+  * ___________________________________
+ * @param {string} err - Error we Send to user during Production
+ */
 const sendErrorProd = (err,res)=>{
 
     //Operational , Trusted Erros : Send Message to client
