@@ -2,7 +2,17 @@ import validator from 'validator'
 import mongoose from 'mongoose'
 import bcrypt from 'bcryptjs'
 
-
+/**
+ * USER MODEL
+ *  ___________________________________
+ * @param {User} User Model
+ * @property {string} firstName -User First Name
+ * @property {string} lastName  -User Last Name
+ * @property {string} email     -User Email
+ * @property {string} password  -User's Password
+ * @property {string} confirmPassword - User should confirm his/her password
+ * @property {string} gender  -User's Gender
+ */
 const userSchema = new mongoose.Schema({
 
     firstName:{
@@ -45,6 +55,7 @@ const userSchema = new mongoose.Schema({
    }
   
    })
+
 
    userSchema.pre('save', async function(next){
 
