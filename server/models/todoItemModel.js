@@ -1,6 +1,18 @@
 import validator from 'validator'
-import mongoose from 'mongoose'
+import mongoose, { Schema } from 'mongoose'
 import bcrypt from 'bcryptjs'
+
+/**
+ * TODO-ITEM MODEL
+ *  ______________________
+ * @param  {string}   Todo  -Todo-Item Model
+ * @property {function} todoSchema-Todo-Item Shema
+ * @property {string} Title        -Todo-Item Title
+ * @property {string} Description  -Todo-Item Decription
+ * @property {string} Priority     -Todo-Item Priority
+ * @property {string} CreatedDate  -Date when Todo-Item Created
+ * @property {string} ModifiedDate -Date when Todo-Item Updated
+ */
 
 const todoSchema = new mongoose.Schema({
     Title:{
