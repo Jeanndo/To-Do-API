@@ -23,13 +23,12 @@
 
 
 ### Technology tools used in this Project
-`````````````````````````````````````````````````````````````````````
+
 
 * Server side Framework : **Nodejs/Express**
 * Linting Library: **ESLint**
 * Style Guide: **Airbnb**
 * Database: **MongoDB**
-````````````````````````````````````````````````````````````````````
 
 ### Additional Tools
 ``````````````````````````````````````````````````````````````````
@@ -38,7 +37,6 @@
 
 
 ### Below are the useful links you may vist
-``````````````````````````````````````````````````````````````````````
 * You may use Postman to test API: [POSTMAN](https://www.getpostman.com/)
 ### You may Need to Setup project locally 
 * Install [git](https://git-scm.com/downloads)
@@ -47,23 +45,23 @@
 `````````````````````````````````````````````````````````````````````````
 ### Use the following Tips to get Started after you are Done With installions
 
-```
 $ To move into folder
-```
+
 $ cd To-Do-API
-```
+
  Please for instaling dependences refer to package.json file
  and Run the command below
 
-```
+
 $ npm install dependence-name
-```
+
 To get started with the server run the command below
 
-```
+
 $ npm run dev-start
 
 ### Author
 [JEAN DE DIEU UKWITEGETSE](https://github.com/Jeanndo)
 ### Acknowledgments
 [Awesomity Task Force](https://awesomity.rw/)
+
