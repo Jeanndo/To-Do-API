@@ -33,7 +33,6 @@
 ### Additional Tools
 ``````````````````````````````````````````````````````````````````
 * JavaScript Es6 with Babel compiler
-````````````````````````````````````````````````````````````````` 
 
 
 ### Below are the useful links you may vist
