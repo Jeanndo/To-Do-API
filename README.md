@@ -3,7 +3,7 @@
  ### List of APIs for ToDo App
  
 * POST /api/v1/todoitem
-* GET /api/v1/todoitem           **You may use POSTMAN to test APIs**
+* GET /api/v1/todoitem           `You may use POSTMAN to test APIs`
 * GET /api/v1/todoitem/:id     
 * DELETE /api/v1/todoitem/:id
 * PATCH /api/v1/todoitem/:id
